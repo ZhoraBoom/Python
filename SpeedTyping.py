@@ -143,7 +143,7 @@ class TypeSpeed:
         self.speed_label.config(text="Speed: \n0 CPM\n0 WPM")
         self.time_label.config(text="Time: 0.00 sec")
         ans = pickle.load(open("error_log.pkl", "rb"))
-        self.last_label.config(text=f"{ans} errors")
+        self.last_label.config(text=f"Last attempt: \n{ans} errors")
         self.error_label.config(text=f"0 errors")
         self.sample_label.config(text=self.sentence)
         self.input_entry.destroy
