@@ -93,7 +93,10 @@ def message_reply(message):
                 else:
                     str += f'сыграла вничью {draws} раза, '
             if loses != '0':
-                str += f'а также потерпела поражений: {loses}.'
+                if draws != '0' or wins != '0':
+                    str += f'а также потерпела поражений: {loses}.'
+                else:
+                    str += f'потерпела поражений: {loses}.'
             if str[-2] == ',':
                 str = str[0:-2] + '.' + str[-1]
             bot.send_message(message.chat.id, str)
